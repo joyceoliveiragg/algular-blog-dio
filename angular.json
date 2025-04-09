@@ -8,87 +8,38 @@
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss"
-        },
-        "@schematics/angular:application": {
-          "strict": true
         }
       },
       "root": "",
-      "sourceRoot": "src/main",
-      "prefix": "jhi",
+      "sourceRoot": "src",
+      "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "dist/blog-app",
-            "index": "src/index.html",
-            "main": "src/main.ts",
+            "index": "src/main/index.html",
+            "main": "src/main/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "assets": ["src/main/favicon.ico"],
-            "styles": ["src/styles.css"],
+            "assets": [
+              "src/main/webapp/favicon.ico", "src/main/content/css/loading.css"
+            ],
+            "styles": ["src/main/content/css/loading.css", "src/styles.css"],
             "scripts": []
-          },
-          "configurations": {
-            "production": {
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
-                }
-              ],
-              "optimization": true,
-              "outputHashing": "all",
-              "sourceMap": false,
-              "extractCss": true,
-              "namedChunks": false,
-              "aot": true,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true
-            },
-            "development": {
-              "buildOptimizer": false,
-              "optimization": false,
-              "vendorChunk": true,
-              "extractLicenses": false,
-              "sourceMap": true,
-              "namedChunks": true
-            }
-          },
-          "defaultConfiguration": "development"
+          }
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "blog-app:build"
-          },
-          "configurations": {
-            "production": {
-              "browserTarget": "blog-app:build:production"
-            },
-            "development": {
-              "browserTarget": "blog-app:build:development"
-            }
-          }
-        },
-        "test": {
-          "builder": "@angular-builders/jest:run",
-          "options": {
-            "configPath": "jest.conf.js",
-            "tsConfig": "tsconfig.spec.json"
+            "browserTarget": "blog-app:build",
+            "port": 4200
           }
         }
       }
     }
   },
   "cli": {
-    "cache": {
-      "enabled": true,
-      "path": "./build/angular/",
-      "environment": "all"
-    },
-    "packageManager": "npm",
-    "analytics": "1463999e-1ae3-4d77-8cdc-4a1dd104f445"
+    "analytics": false
   }
 }
