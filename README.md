@@ -51,7 +51,7 @@ The `./npmw run` command will list all the scripts available to run for this pro
 
 JHipster ships with PWA (Progressive Web App) support, and it's turned off by default. One of the main components of a PWA is a service worker.
 
-The service worker initialization code is disabled by default. To enable it, uncomment the following code in `src/main/webapp/app/app.config.ts`:
+The service worker initialization code is disabled by default. To enable it, uncomment the following code in `src/main/app/app.config.ts`:
 
 ```typescript
 ServiceWorkerModule.register('ngsw-worker.js', { enabled: false }),
@@ -72,13 +72,13 @@ To benefit from TypeScript type definitions from [DefinitelyTyped][] repository 
 ```
 
 Then you would import the JS and CSS files specified in library's installation instructions so that [Webpack][] knows about them:
-Edit [src/main/webapp/app/app.config.ts](src/main/webapp/app/app.config.ts) file:
+Edit [src/main/webapp/app/app.config.ts](src/main/app/app.config.ts) file:
 
 ```
 import 'leaflet/dist/leaflet.js';
 ```
 
-Edit [src/main/webapp/content/scss/vendor.scss](src/main/webapp/content/scss/vendor.scss) file:
+Edit [src/main/webapp/content/scss/vendor.scss](src/main/content/scss/vendor.scss) file:
 
 ```
 @import 'leaflet/dist/leaflet.css';
@@ -101,9 +101,9 @@ ng generate component my-component
 will generate few files:
 
 ```
-create src/main/webapp/app/my-component/my-component.component.html
-create src/main/webapp/app/my-component/my-component.component.ts
-update src/main/webapp/app/app.config.ts
+create src/main/app/my-component/my-component.component.html
+create src/main/app/my-component/my-component.component.ts
+update src/main/app/app.config.ts
 ```
 
 ## Building for production
