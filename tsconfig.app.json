@@ -5,10 +5,10 @@
     "types": [
       "@angular/localize"
     ],
-    "rootDir": "main"
+    "rootDir": "src/main.ts"
   },
   "files": [
-    "src/main/webapp/main.ts"
+    "src/main.ts"
   ],
   "include": [
     "src/main/**/*.ts"

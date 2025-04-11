@@ -37,7 +37,7 @@ Run the following commands in two separate terminals to create a blissful develo
 auto-refreshes when files change on your hard drive.
 
 ```
-./gradlew -x webapp
+./gradlew -x frontend
 ./npmw start
 ```
 
@@ -72,13 +72,13 @@ To benefit from TypeScript type definitions from [DefinitelyTyped][] repository 
 ```
 
 Then you would import the JS and CSS files specified in library's installation instructions so that [Webpack][] knows about them:
-Edit [src/main/webapp/app/app.config.ts](src/main/app/app.config.ts) file:
+Edit [src/main/frontend/app/app.config.ts](src/main/app/app.config.ts) file:
 
 ```
 import 'leaflet/dist/leaflet.js';
 ```
 
-Edit [src/main/webapp/content/scss/vendor.scss](src/main/content/scss/vendor.scss) file:
+Edit [src/main/frontend/content/scss/vendor.scss](src/main/content/scss/vendor.scss) file:
 
 ```
 @import 'leaflet/dist/leaflet.css';
